@@ -1,4 +1,4 @@
-import { config } from './authentication.js';
+import { config } from './app.js';
 import { env } from './env.js';
 import { httpsOptions } from './https.js';
 import {

@@ -25,7 +25,6 @@ export class KeycloakService implements KeycloakConnectOptionsFactory {
   readonly #logger = getLogger(KeycloakService.name);
 
   constructor() {
-    // https://www.keycloak.org/docs-api/23.0.4/rest-api/index.html
     const authorization = Buffer.from(`${clientId}:${secret}`, 'utf8').toString(
       'base64',
     );
@@ -36,7 +35,6 @@ export class KeycloakService implements KeycloakConnectOptionsFactory {
 
     this.#keycloakClient = axios.create({
       baseURL: authServerUrl,
-      // ggf. httpsAgent fuer HTTPS bei selbst-signiertem Zertifikat
     });
     this.#logger.debug('keycloakClient=%o', this.#keycloakClient.defaults);
   }
@@ -93,9 +91,6 @@ export class KeycloakService implements KeycloakConnectOptionsFactory {
     return response.data;
   }
 
-  // Extraktion der Rollen: wird auf Client-Seite benoetigt
-  // { ..., "azp": "buch-client", "exp": ..., "resource_access": { "buch-client": { "roles": ["admin"] } ...}
-  // azp = authorized party
   #logPayload(response: AxiosResponse<Record<string, string | number>>) {
     const { access_token } = response.data;
     const [, payloadString] = (access_token as string).split('.');

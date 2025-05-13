@@ -10,7 +10,7 @@ export const VOLUMES_DIR = resolve(BASEDIR, '..', '..', '.volumes');
 
 export const KEYS_DIR = resolve(BASEDIR, '..', '..', 'keys');
 
-const configFile = resolve(RESOURCES_DIR, 'authentication.yml');
+const configFile = resolve(RESOURCES_DIR, 'app.yml');
 export const config = load(readFileSync(configFile, 'utf8')) as Record<
   string,
   any

@@ -1,4 +1,4 @@
-import { BASEDIR } from './authentication.js';
+import { BASEDIR } from './app.js';
 import {
   type ApolloDriverConfig,
   ApolloFederationDriver,
