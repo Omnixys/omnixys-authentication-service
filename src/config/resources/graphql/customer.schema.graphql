@@ -10,9 +10,34 @@ type Mutation {
 
 # Ergebnis des Logins
 type LoginResult {
+    """
+  Zugriffstoken für authentifizierte Operationen.
+  """
   access_token: String!
+
+  """
+  Gültigkeitsdauer des Zugriffstokens (in Sekunden).
+  """
   expires_in: Int!
+
+  """
+  Token zur Erneuerung des Zugriffstokens.
+  """
   refresh_token: String!
+
+  """
+  Gültigkeitsdauer des Refresh-Tokens (in Sekunden).
+  """
   refresh_expires_in: Int!
+
+  """
+  ID-Token, das Benutzerinformationen enthält.
+  """
+  id_token: String!
+
+  """
+  Gültigkeitsbereich des Tokens.
+  """
+  scope: String!
   roles: [String!]
 }

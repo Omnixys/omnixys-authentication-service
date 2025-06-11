@@ -49,7 +49,5 @@ export const paths = {
 export const httpsAgent = new Agent({
   requestCert: true,
   rejectUnauthorized: false,
-  ca: httpsOptions
-    ? httpsOptions.cert as Buffer
-    : undefined,
+  ca: httpsOptions ? (httpsOptions.cert as Buffer) : undefined,
 });

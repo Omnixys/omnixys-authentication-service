@@ -1,29 +1,11 @@
-/*
- * Copyright (C) 2016 - present Juergen Zimmermann, Hochschule Karlsruhe
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
 import { type CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface.js';
 
 export const corsOptions: CorsOptions = {
   // Access-Control-Allow-Origin (nur Requests von origin zulassen)
   origin: [
     'https://studio.apollographql.com',
-    'http://localhost:4200',
-    'http://localhost:4000',
     'http://localhost:3000',
-    'http://localhost:3002',
+    'http://gateway:3000',
   ],
   // origin: true,
 

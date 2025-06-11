@@ -3,7 +3,7 @@ import { env } from './env.js';
 import { hostname } from 'node:os';
 import { httpsOptions } from './https.js';
 
-const { NODE_ENV } = env;
+const { NODE_ENV, TEMPO_URI } = env;
 
 const computername = hostname();
 const port = (config.node?.port as number | undefined) ?? 3000; // eslint-disable-line @typescript-eslint/no-magic-numbers
@@ -29,4 +29,5 @@ export const nodeConfig = {
     | 'production'
     | 'test'
     | undefined,
+  tempo: TEMPO_URI,
 } as const;

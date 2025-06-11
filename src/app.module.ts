@@ -5,9 +5,11 @@ import { RequestLoggerMiddleware } from './logger/request-logger.middleware.js';
 import { ApolloDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
 import { graphQlModuleOptions } from './config/graphql.js';
+import { HealthModule } from './health/health.module.js';
 
 @Module({
   imports: [
+    HealthModule,
     KeycloakModule,
     LoggerModule,
     GraphQLModule.forRoot<ApolloDriverConfig>(graphQlModuleOptions),

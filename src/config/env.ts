@@ -11,6 +11,7 @@ const {
   START_DB_SERVER,
   HTTPS,
   KEYS_PATH,
+  TEMPO_URI,
 } = process.env;
 
 /* eslint-disable @typescript-eslint/naming-convention */
@@ -29,6 +30,7 @@ export const env = {
   START_DB_SERVER,
   HTTPS,
   KEYS_PATH,
+  TEMPO_URI,
 } as const;
 /* eslint-enable @typescript-eslint/naming-convention */
 

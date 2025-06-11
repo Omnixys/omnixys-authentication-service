@@ -25,7 +25,7 @@ export class BannerService implements OnApplicationBootstrap {
    * @description Wird beim Bootstrap der Anwendung ausgeführt, um Anwendungsinformationen und ein Banner auszugeben.
    */
   onApplicationBootstrap() {
-    const { host, nodeEnv, port } = nodeConfig;
+    const { host, nodeEnv, port, tempo } = nodeConfig;
 
     // Banner generieren und ausgeben
     this.#generateBanner();
@@ -47,6 +47,7 @@ export class BannerService implements OnApplicationBootstrap {
     this.#logger.info(
       chalk.cyan('Benutzer: ') + chalk.yellow(userInfo().username),
     );
+    this.#logger.info(chalk.cyan('Tempo URI: ') + chalk.yellow(tempo!));
     this.#logger.info(chalk.green('===============================')); // Endmarkierung für die Anwendungsinformationen
   }
 
