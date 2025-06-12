@@ -239,8 +239,6 @@ jobs:
               --type cyclonedx \
               --key github \
               ${{ env.IMAGE_NAME }}:${{ env.CURRENT_DATE }}
-          
-          
 
         - name: Upload SBOM (CycloneDX)
           uses: actions/upload-artifact@v4
