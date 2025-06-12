@@ -232,8 +232,10 @@ jobs:
       - name: Generate CycloneDX SBOM for Node.js
         run: |
           npm install -g @cyclonedx/bom
-          export PATH="$(npm bin -g):$PATH"
-          cyclonedx-bom -o sbom.json
+          BINARY_PATH="$(npm bin -g)/cyclonedx-bom"
+          "$BINARY_PATH" -o sbom.json
+        
+        
 
       - name: Cosign SBOM Attestation
         run: |
